@@ -69,26 +69,93 @@ function BusTravel(){
 
     }
 
-    function singleTripPrice(location){
-        switch(location){
-            case 'Khayelitsha':
-                state.pricePerSingleTrip = 40;
-                break;
+    function singleTripPrice(location, peak){
+        state.startLocation = location;
+        state.peak = peak;
+        //Khayelitsha
+        if(state.startLocation == 'Khayelitsha' && state.peak == 'off-peak'){
+            state.pricePerSingleTrip = 40;
+        } else if(state.startLocation == 'Khayelitsha' && state.peak == 'on-peak') {
+            state.pricePerSingleTrip = 40 + (40*0.25);
+        }
 
-            case 'Dunoon':
-                state.pricePerSingleTrip = 25;
-                break;
-            
-            case 'Mitchells Plain':
-                state.pricePerSingleTrip = 30;
-                break;
+        //Dunoon
+        if(state.startLocation == 'Dunoon' && state.peak == 'off-peak'){
+            state.pricePerSingleTrip = 25;
+        } else if(state.startLocation == 'Dunoon' && state.peak == 'on-peak') {
+            state.pricePerSingleTrip = 25 + (50*0.25);
+        }
 
-            default: 
-                state.pricePerSingleTrip = 0;
+        //Mitchells Plain
+        if(state.startLocation == 'Mitchells Plain' && state.peak == 'off-peak'){
+            state.pricePerSingleTrip = 30;
+        } else if(state.startLocation == 'Mitchells Plain' && state.peak == 'on-peak') {
+            state.pricePerSingleTrip = 30 + (30*0.25);
+        }
+
+    }
+
+    function returnTrips(points, location, peakTime){
+        state.points = points;
+        state.startLocation = location;
+        state.peak = peakTime;
+
+        if(state.startLocation == 'Khayelitsha' && state.points >= 80){
+            //off-peak
+            if(state.peak == 'off-peak'){
+                state.numberOfReturnTrips = state.points/(2*40);
+            } else {
+                //during peak
+                var peakCost = 40 + (40*0.25);
+                state.numberOfReturnTrips = state.points/(2*peakCost);
+            }
+        } else if(state.startLocation == 'Dunoon' && state.points >= 50){
+            //off-peak
+            if(state.peak == 'off-peak'){
+                state.numberOfReturnTrips = state.points/(2*25);
+            } else {
+                //during peak
+                var peakCost = 25 + (25*0.25);
+                state.numberOfReturnTrips = state.points/(2*peakCost);
+            }
+        } else if(state.startLocation == 'Mitchells Plain' && state.points >= 60){
+                //off-peak
+            if(state.peak == 'off-peak'){
+                state.numberOfReturnTrips = state.points/(2*30);
+            } else {
+                //during peak
+                var peakCost = 30 + (30*0.25);
+                state.numberOfReturnTrips = state.points/(2*peakCost);
+            }
         }
     }
 
-    
+    function returnTripPrice(location, peak){
+        state.startLocation = location;
+        state.peak = peak;
+        //Khayelitsha
+        if(state.startLocation == 'Khayelitsha' && state.peak == 'off-peak'){
+            state.pricePerReturnTrip = 80;
+        } else if(state.startLocation == 'Khayelitsha' && state.peak == 'on-peak') {
+            state.pricePerReturnTrip = 80 + (80*0.25);
+        }
+
+        //Dunoon
+        if(state.startLocation == 'Dunoon' && state.peak == 'off-peak'){
+            state.pricePerReturnTrip = 50;
+        } else if(state.startLocation == 'Dunoon' && state.peak == 'on-peak') {
+            state.pricePerReturnTrip = 50 + (50*0.25);
+        }
+
+        //Mitchells Plain
+        if(state.startLocation == 'Mitchells Plain' && state.peak == 'off-peak'){
+            state.pricePerReturnTrip = 60;
+        } else if(state.startLocation == 'Mitchells Plain' && state.peak == 'on-peak') {
+            state.pricePerReturnTrip = 60 + (60*0.25);
+        }
+
+    }
+
    
 
     //Getters
@@ -100,10 +167,17 @@ function BusTravel(){
         return state.pricePerSingleTrip;
     }
 
+    function getNumberOfReturnTrips(){
+        return state.numberOfReturnTrips;
+    }
+
     return {
         calculateSingleTrips,
         getNumberOfSingleTrips,
         getPricePerSingleTrip,
-        singleTripPrice
+        singleTripPrice,
+        returnTrips,
+        getNumberOfReturnTrips,
+        returnTripPrice
     }
 }
