@@ -29,7 +29,7 @@ const points = document.querySelector('#bus-points');
 const startLocation = document.querySelector('#location');
 var checkedRadio = document.querySelector('input[name="peak-time"]:checked');
 const checkbox = document.querySelector('#return-trip');
-const calculateBtn = document.querySelector('#calculate');
+const calculateBtn = document.querySelector('#calculate'); 
 const arrayOfLocationOptions = startLocation.options;
 
 //outputs fields

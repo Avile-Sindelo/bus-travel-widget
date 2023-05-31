@@ -10,22 +10,32 @@ describe('Bus Travel Widget tests', function(){
         bus.singleTripPrice('Dunoon', '');
         assert.equal(0 , bus.getPricePerSingleTrip());
     });
+
+    it('should test the cost for a single trip from Khayelitsha during both the off-peak and on-peak hours', function(){
+        let bus = BusTravel();
+        bus.singleTripPrice('Khayelitsha', 'off-peak');
+        assert.equal(40, bus.getPricePerSingleTrip())
+        bus.singleTripPrice('Khayelitsha', 'on-peak');
+        assert.equal(50 , bus.getPricePerSingleTrip());
+    });
     
-    it('should test if the cost for a single trip from Dunoon during off-peak hours is R25', function(){
+    it('should test the cost for a single trip from Dunoon during both the off-peak and on-peak hours', function(){
         let bus = BusTravel();
         bus.singleTripPrice('Dunoon', 'off-peak');
-        assert.equal(25 , bus.getPricePerSingleTrip());
-    });
-
-    it('should test if the cost for a single trip from Dunoon during on-peak hours is R37.5', function(){
-        let bus = BusTravel();
+        assert.equal(25, bus.getPricePerSingleTrip())
         bus.singleTripPrice('Dunoon', 'on-peak');
         assert.equal(37.5 , bus.getPricePerSingleTrip());
     });
 
-    it('should test if the cost for a single trip from Khayelitsha during off-peak hours is R40', function(){
+    it('should test the cost for a single trip from Mitchells Plain during both the off-peak and on-peak hours', function(){
         let bus = BusTravel();
-        bus.singleTripPrice('Khayelitsha', 'off-peak');
-        assert.equal(40 , bus.getPricePerSingleTrip());
+        bus.singleTripPrice('Mitchells Plain', 'off-peak');
+        assert.equal(30, bus.getPricePerSingleTrip())
+        bus.singleTripPrice('Mitchells Plain', 'on-peak');
+        assert.equal(37.5 , bus.getPricePerSingleTrip());
     });
+
+    
+
+    
 });
