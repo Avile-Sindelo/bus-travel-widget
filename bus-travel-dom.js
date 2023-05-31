@@ -1,7 +1,7 @@
 /*** ********** PSUEDOCODE ***************
- * Get reference to the point input
- * Get reference to the language input
- * Get reference to the ckecked radio button
+ * Get reference to the points input
+ * Get reference to the location input
+ * Get reference to the checked radio button
  * Get reference to the checkbox
  * 
  * Get reference to the output fields
@@ -24,4 +24,22 @@
  * 
  */
 
+
+const points = document.querySelector('#bus-points');
+const startLocation = document.querySelector('#location');
 var checkedRadio = document.querySelector('input[name="peak-time"]:checked');
+const checkbox = document.querySelector('#return-trip');
+const calculateBtn = document.querySelector('#calculate');
+const arrayOfLocationOptions = startLocation.options;
+
+//outputs fields
+const singlesTripsPossible = document.querySelector('#number-of-single-trips');
+const returnTripsPossible = document.querySelector('#number-of-return-trips');
+const singleTripCost = document.querySelector('#price-per-single-trip');
+const returnTripCost = document.querySelector('#price-per-return-trip');
+
+calculateBtn.addEventListener('click', function(){
+    console.log(checkedRadio);
+    console.log(checkbox);
+    console.log(startLocation.options);
+});
