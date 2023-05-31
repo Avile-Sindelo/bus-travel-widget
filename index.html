@@ -4,11 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Bus Travel Widget</title>
 </head>
 <body>
-    
+    <div id="container">
+        <h1> Bus Travel Widget</h1>
+        <div id="entries">
+            <div id="labels">
+               <label for="bus-points"> Points : </label>
+               <label for="start-location"> Start Location </label>
+            </div>
+            <div id="inputs">
+                <input type="number" id="bus-points" >
+                <select>
+                    <option value="" disabled selected> Select start location </option>
+                    <option value="Khayelitsha"> Khayelitsha</option>
+                    <option value="Dunoon"> Dunoon</option>
+                    <option value="Mitchells Plain"> Mitchells Plain</option>
+                </select>
+            </div>
+        </div>
 
+        <div>
+            <h3 id="travel-times-heading">Travel times</h3>
+            <div>
+                <div id="radioInputs">
+                    <input type="radio" name="peak-time" value="on-peak">
+                    <label for="on-peak"> On-Peak</label>
+                    <input type="radio" name="peak-time" value="off-peak">
+                    <label for="off-peak">Off-Peak</label>
+                </div>
+                <div id="checkboxInput">
+                    <input type="checkbox" value="return-trip">
+                    <label for="returnTrip"> Return trip</label>
+                    <button id="calculate"> Calculate </button>
+                </div>
+
+            </div>
+        </div>
+
+        <h2 id="calculation-header"> Calculations </h2>
+        <div id="output-div">
+            <div id="output-labels">
+                <label> Number of single trips : </label>
+                <label> Price per trip (single) : </label>
+                <label> Number of return trips : </label>
+                <label> Preice per trip (return) : </label>
+            </div>
+            <div id="output-values">
+                <span class="value-output"> 3 </span>
+                <span class="value-output"> 6 </span>
+                <span class="value-output"> 9 </span>
+                <span class="value-output"> 3 </span>
+            </div>
+        </div>
     <script src="factory-function/bus-travel.js"></script>
     <script src="bus-travel-dom.js"></script>
 </body>

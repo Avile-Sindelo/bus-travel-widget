@@ -1,0 +1,47 @@
+
+
+#container{
+    background-color: teal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#entries{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#labels, #inputs{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#output-div{
+    border: 1px solid white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#output-labels, #output-values{
+    display: flex;
+    flex-direction: column;
+    padding: 0 3%
+}
+
+.value-output{
+    background-color: lightblue;
+    padding: 1% 3%;
+    margin: 1% 3%;
+}
+
