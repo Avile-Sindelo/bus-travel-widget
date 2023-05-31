@@ -28,7 +28,7 @@
 
         <div>
             <h3 id="travel-times-heading">Travel times</h3>
-            <div>
+            <div id="all-inputs">
                 <div id="radioInputs">
                     <input type="radio" name="peak-time" value="on-peak">
                     <label for="on-peak"> On-Peak</label>
@@ -47,16 +47,16 @@
         <h2 id="calculation-header"> Calculations </h2>
         <div id="output-div">
             <div id="output-labels">
-                <label> Number of single trips : </label>
-                <label> Price per trip (single) : </label>
-                <label> Number of return trips : </label>
-                <label> Preice per trip (return) : </label>
+                <label for="number-of-single-trips"> Number of single trips : </label>
+                <label for="price-per-single-trip"> Price per trip (single) : </label>
+                <label for="number-of-return-trips"> Number of return trips : </label>
+                <label for="price-per-return-trip"> Preice per trip (return) : </label>
             </div>
             <div id="output-values">
-                <span class="value-output"> 3 </span>
-                <span class="value-output"> 6 </span>
-                <span class="value-output"> 9 </span>
-                <span class="value-output"> 3 </span>
+                <span class="value-output" id="number-of-single-trips"> 3 </span>
+                <span class="value-output" id="price-per-single-trip"> 6 </span>
+                <span class="value-output" id="number-of-return-trips"> 9 </span>
+                <span class="value-output" id="price-per-return-trip"> 3 </span>
             </div>
         </div>
     <script src="factory-function/bus-travel.js"></script>
