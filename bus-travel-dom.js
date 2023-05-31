@@ -1,6 +1,9 @@
 var checkedRadio = document.querySelector('input[name="peak"]:checked');
-var btn = document.querySelector('#test');
 
-btn.addEventListener('click', function(){
-    console.log(checkedRadio);
-});
+let bus = BusTravel();
+bus.calculateSingleTrips(80, 'Dunoon', 'off-peak');
+bus.singleTripPrice('Dunoon');
+
+console.log(bus.getPricePerSingleTrip());
+
+console.log(bus.getNumberOfSingleTrips());
