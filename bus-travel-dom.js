@@ -36,7 +36,7 @@ const arrayOfLocationOptions = startLocation.options;
 const singlesTripsPossible = document.querySelector('#number-of-single-trips');
 const returnTripsPossible = document.querySelector('#number-of-return-trips');
 const singleTripCost = document.querySelector('#price-per-single-trip');
-const returnTripCost = document.querySelector('#price-per-return-trip');
+const returnTripsPrice = document.querySelector('#price-per-return-trip');
 
 //check if local storage has state
 var currentState;
@@ -79,6 +79,13 @@ calculateBtn.addEventListener('click', function(){
         singlesTripsPossible.innerHTML = busRide.getNumberOfSingleTrips();
         busRide.singleTripPrice(checkSelectedOption(), checkedRadio.value);
         singleTripCost.innerHTML = busRide.getPricePerSingleTrip()
+    }
+
+    if(checkbox.checked){
+        busRide.returnTrips(points.value, checkSelectedOption(), checkedRadio.value);
+        returnTripsPossible.innerHTML = busRide.getNumberOfReturnTrips();
+        busRide.returnTripPrice(checkSelectedOption(), checkedRadio.value);
+        returnTripsPrice.innerHTML = busRide.getPricePerReturnTrip();
     }
 
     console.log(checkbox);
