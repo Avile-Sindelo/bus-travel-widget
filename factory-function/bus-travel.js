@@ -17,9 +17,9 @@
  * ********* END OF PSUEDO *************
  */
 
-function BusTravel(){
+function BusTravel(currentState){
     //state variable
-    var state = {
+    var state = currentState || {
         points: 0,
         startLocation: '',
         numberOfSingleTrips: 0,
