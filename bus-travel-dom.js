@@ -86,11 +86,11 @@ calculateBtn.addEventListener('click', function(){
         returnTripsPossible.innerHTML = busRide.getNumberOfReturnTrips();
         busRide.returnTripPrice(checkSelectedOption(), checkedRadio.value);
         returnTripsPrice.innerHTML = busRide.getPricePerReturnTrip();
-    }
+    } else {
+        returnTripsPossible.innerHTML = 0;
+        returnTripsPrice.innerHTML = 0;
+        }
 
-    console.log(checkbox);
-    console.log(checkSelectedOption());
-    ;
-    //console.log(checkedRadio.value);
+    
 });
 
