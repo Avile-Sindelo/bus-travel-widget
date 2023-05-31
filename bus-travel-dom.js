@@ -76,7 +76,8 @@ calculateBtn.addEventListener('click', function(){
     } else {
         //no error occured
         busRide.calculateSingleTrips(parseFloat(points.value), checkSelectedOption() , checkedRadio.value);
-        singlesTripsPossible.innerHTML = busRide.getNumberOfSingleTrips()
+        singlesTripsPossible.innerHTML = busRide.getNumberOfSingleTrips();
+        busRide.singleTripPrice(checkSelectedOption(), checkedRadio.value);
         singleTripCost.innerHTML = busRide.getPricePerSingleTrip()
     }
 
