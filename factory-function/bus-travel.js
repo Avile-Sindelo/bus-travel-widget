@@ -171,6 +171,9 @@ function BusTravel(){
         return state.numberOfReturnTrips;
     }
 
+    function getPricePerReturnTrip(){
+        return state.pricePerReturnTrip;
+    }
     return {
         calculateSingleTrips,
         getNumberOfSingleTrips,
@@ -178,6 +181,7 @@ function BusTravel(){
         singleTripPrice,
         returnTrips,
         getNumberOfReturnTrips,
-        returnTripPrice
+        returnTripPrice,
+        getPricePerReturnTrip
     }
 }
